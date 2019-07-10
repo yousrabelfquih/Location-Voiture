@@ -6,6 +6,7 @@
 package fst.projet.stock.domain.dao;
 
 import fst.projet.stock.bean.LocationDetail;
+import fst.projet.stock.bean.Voiture;
 import java.util.List;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
@@ -15,6 +16,6 @@ import org.springframework.stereotype.Repository;
  * @author amal
  */@Repository
 public interface LocationDetailDao extends JpaRepository<LocationDetail, List>{
-    public LocationDetail findById(Long Id);
+    public LocationDetail findByVoiture(Voiture voiture);
     
 }

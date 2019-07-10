@@ -14,7 +14,7 @@ import org.springframework.stereotype.Repository;
  * @author yousra
  */
 @Repository
-public interface ModelDao extends JpaRepository<Model, Model>{
-    public Model findByLibelle(String Libelle);
+public interface ModelDao extends JpaRepository<Model, Long>{
+    public Model findByLibelle(String libelle);
     
 }

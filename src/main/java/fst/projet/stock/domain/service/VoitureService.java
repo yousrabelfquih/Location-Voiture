@@ -15,10 +15,9 @@ import java.util.List;
  * @author amal
  */
 public interface VoitureService {
-    public Voiture findById(long id);
+    public Voiture findByMatricule(String matricule);
     public List<Voiture> findAll();
-    public Voiture save(Voiture voiture);
-    public Voiture ajout(Long id, String matricule, Couleur couleur,String model,Carburant carburant,Double puissance,Double coutParJour );
+    public int save(Voiture voiture);
     
     
     

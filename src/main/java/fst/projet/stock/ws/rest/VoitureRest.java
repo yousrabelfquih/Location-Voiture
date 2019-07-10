@@ -19,6 +19,7 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
+
 /**
  *
  * @author yousr
@@ -29,23 +30,19 @@ public class VoitureRest {
     @Autowired
     private VoitureService voitureService;
 
-    @GetMapping("/id/{id}")
-    public Voiture findById(@PathVariable long id) {
-        return voitureService.findById(id);
+    @GetMapping("/matricule/{matricule}")
+    public Voiture findByMatricule(@PathVariable String matricule) {
+        return voitureService.findByMatricule(matricule);
     }
-    @GetMapping("/voitures")
+    @GetMapping("/")
     public List<Voiture> findAll() {
        return voitureService.findAll();
     }
     @PostMapping("/")
-    public Voiture save(@RequestBody Voiture voiture) {
+    public int save(@RequestBody Voiture voiture) {
         return voitureService.save(voiture);
     }
     
-    @PutMapping("/id/{id}/coutParJour/{coutParJour}")
-    public Voiture ajout(@PathVariable Long id,@PathVariable String matricule,@PathVariable Couleur couleur,@PathVariable String model,@PathVariable Carburant carburant,@PathVariable Double puissance,@PathVariable Double coutParJour) {
-        return voitureService.ajout(id, matricule, couleur, model, carburant, puissance, coutParJour);
-    }
 
     public VoitureService getVoitureService() {
         return voitureService;

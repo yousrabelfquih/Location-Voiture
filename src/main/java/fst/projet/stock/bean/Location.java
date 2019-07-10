@@ -27,7 +27,7 @@ public class Location implements Serializable {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     private Long id;
-    @Temporal(TemporalType.DATE)
+    @Temporal(TemporalType.TIMESTAMP)
     private Date dateLocation;
     private Double prixTotal;
     @OneToMany(mappedBy = "location")

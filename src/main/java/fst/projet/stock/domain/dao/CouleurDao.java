@@ -15,7 +15,7 @@ import org.springframework.stereotype.Repository;
  */
 @Repository
 public interface CouleurDao extends JpaRepository<Couleur, Long>{
-    public CouleurDao findByLibelle(String Libelle);
+    public CouleurDao findByLibelle(String libelle);
     
                     
     

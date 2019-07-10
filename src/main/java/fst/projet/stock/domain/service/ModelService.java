@@ -5,10 +5,18 @@
  */
 package fst.projet.stock.domain.service;
 
+import fst.projet.stock.bean.Model;
+import java.util.List;
+
 /**
  *
  * @author amal
  */
-public class ModelService {
+public interface ModelService {
+        public Model findByLibelle(String Libelle);
+                public int save(Model model);
+
+    public List<Model> findAll();
+
     
 }

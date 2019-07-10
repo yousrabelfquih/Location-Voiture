@@ -16,6 +16,6 @@ import org.springframework.stereotype.Repository;
  */
 @Repository
 public interface VoitureDao  extends JpaRepository<Voiture, Long>{
-    public Voiture findById(long id);
+    public Voiture findByMatricule(String matricule);
     
 }

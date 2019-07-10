@@ -5,10 +5,48 @@
  */
 package fst.projet.stock.domain.service.impl;
 
+import fst.projet.stock.bean.Model;
+import fst.projet.stock.domain.dao.ModelDao;
+import fst.projet.stock.domain.service.ModelService;
+import java.util.List;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
+
 /**
  *
  * @author amal
  */
-public class ModelServiceImpl {
+@Service
+public class ModelServiceImpl implements ModelService{
+
+    @Autowired
+    private ModelDao modelDao;
+
+    public ModelDao getModelDao() {
+        return modelDao;
+    }
+
+    public void setModelDao(ModelDao modelDao) {
+        this.modelDao = modelDao;
+    }
+     @Override
+    public List<Model> findAll() {
+        return modelDao.findAll();
+    }
+    @Override
+    public Model findByLibelle(String Libelle) {
+        return modelDao.findByLibelle(Libelle);
+    }
+
+    @Override
+    public int save(Model model) {
+    if (findByLibelle(model.getLibelle()) != null){
+                   return -1;
+ 
+         }  else {
+            modelDao.save(model);
+            return 1;
+        }    }
+
     
 }

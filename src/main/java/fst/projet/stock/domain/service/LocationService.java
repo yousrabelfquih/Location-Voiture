@@ -6,13 +6,20 @@
 package fst.projet.stock.domain.service;
 
 import fst.projet.stock.bean.Location;
+import fst.projet.stock.bean.LocationDetail;
+import java.util.Date;
+import java.util.List;
 
 /**
  *
  * @author amal
  */
 public interface LocationService {
-     public Location findById(Long Id);
-     
+    
+    public Location findByDateLocation(Date dateLocation);
+    public List<Location> findAll();
+    public int save(Location location);
+   // public boolean save(Location location, List<LocationDetail> locationdetail);
+
     
 }

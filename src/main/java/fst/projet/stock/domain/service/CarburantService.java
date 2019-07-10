@@ -6,12 +6,15 @@
 package fst.projet.stock.domain.service;
 
 import fst.projet.stock.bean.Carburant;
+import java.util.List;
 
 /**
  *
  * @author amal
  */
 public interface CarburantService {
-        
+            public Carburant findByLibelle(String Libelle);
+            public int save(Carburant carburant);
+            public List<Carburant> findAll();
 
 }

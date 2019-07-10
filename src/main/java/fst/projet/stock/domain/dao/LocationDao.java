@@ -6,6 +6,7 @@
 package fst.projet.stock.domain.dao;
 
 import fst.projet.stock.bean.Location;
+import java.util.Date;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 
@@ -15,6 +16,6 @@ import org.springframework.stereotype.Repository;
  */
 @Repository
 public interface LocationDao extends JpaRepository<Location, Location>{
-    public Location findById(Long Id);
+    public Location findByDateLocation(Date dateLocation);
     
 }
